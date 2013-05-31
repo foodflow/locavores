@@ -15,5 +15,6 @@ web1:
       - mysql
       - pdo_mysql
       - zip
-    before_deploy:
-      - "php app/console doctrine:schema:update --force"
+    php_session_autostart: Off
+    php_short_open_tag: Off
+    magic_quotes_gpc: Off
