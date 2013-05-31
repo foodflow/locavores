@@ -18,7 +18,7 @@ web1:
     php_session_autostart: Off
     php_short_open_tag: Off
     magic_quotes_gpc: Off
-    php_date_timezone: America/Detroit
+    php_date_timezone: America/Los_Angeles
     after_build:
         - "curl -s http://getcomposer.org/installer | php -- --quiet; php composer.phar install -n"
         - "php ./vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/bin/build_bootstrap.php"
