@@ -18,3 +18,12 @@ web1:
     php_session_autostart: Off
     php_short_open_tag: Off
     magic_quotes_gpc: Off
+    php_date_timezone: America/Detroit
+    after_build:
+        - "curl -s http://getcomposer.org/installer | php -- --quiet; php composer.phar install -n"
+        - "php app/console --env=prod --no-debug assetic:dump -n"
+        - "php vendor/symfony/symfony/src/Symfony/Component/Locale/Resources/data/build-data.php"
+    before_deploy:
+        - "php app/console --env=prod --no-debug cache:clear --no-warmup"
+        - "php app/console --env=prod --no-debug cache:warmup"
+        - "php app/console --env=prod --no-debug doctrine:migrations:migrate -n"
