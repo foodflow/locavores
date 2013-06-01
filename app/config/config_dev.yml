@@ -4,6 +4,16 @@ imports:
 framework:
     router:   { resource: "%kernel.root_dir%/config/routing_dev.yml" }
     profiler: { only_exceptions: false }
+    
+doctrine:
+    dbal:
+        driver:   pdo_mysql
+        host:     localhost
+        port:     3306
+        dbname:   locavores
+        user:     locavores
+        password: locavores
+        charset:  UTF8
 
 web_profiler:
     toolbar: true
@@ -27,3 +37,19 @@ assetic:
 
 #swiftmailer:
 #    delivery_address: me@example.com
+
+hwi_oauth:
+    resource_owners:
+        twitter:
+            type:                twitter
+            client_id:           %oauth.twitter.client.id%
+            client_secret:       %oauth.twitter.client.secret%
+        facebook:
+            type:                 facebook
+            client_id:            %oauth.facebook.client.id%
+            client_secret:        %oauth.facebook.client.secret%
+            scope:                "email"
+        foursquare:
+            type:                 foursquare
+            client_id:            %oauth.foursquare.client.id%
+            client_secret:        %oauth.foursquare.client.secret%

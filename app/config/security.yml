@@ -37,7 +37,7 @@ security:
                 failure_path:      /login
 
                 oauth_user_provider:
-                    service: yof_user_provider
+                    service: ff_user_provider
         login:
             pattern:  ^/login$
             security: false
@@ -46,7 +46,7 @@ security:
                 key: "%ey.secret%"
                 lifetime: 31536000 # 365 days in seconds
                 path: /
-                domain: ~ # Defaults to the current domain from $_SERVER
+                domain: ~
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }

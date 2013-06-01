@@ -5,7 +5,7 @@ imports:
 framework:
     #esi:             ~
     translator:      { fallback: %locale% }
-    secret:          %ey.secret%
+    secret:          "%ey.secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
         strict_requirements: %kernel.debug%
@@ -28,9 +28,9 @@ twig:
       project: %project%
     
 # BC Boostrap Configuration
-bc_bootstrap:
-    assets_dir:  %kernel.root_dir%/../src/YOF/WebBundle/Resources/public/components/bootstrap
-    jquery_path: %kernel.root_dir%/../src/YOF/WebBundle/Resources/public/components/jquery/jquery.js
+#bc_bootstrap:
+#    assets_dir:  %kernel.root_dir%/../src/FoodFlow/WebBundle/Resources/public/components/bootstrap
+#    jquery_path: %kernel.root_dir%/../src/FoodFlow/WebBundle/Resources/public/components/jquery/jquery.js
 
 # Assetic Configuration
 assetic:
@@ -52,16 +52,13 @@ assetic:
 # Doctrine Configuration
 doctrine:
     dbal:
-        driver:   %database_driver%
-        host:     %database_host%
-        port:     %database_port%
-        dbname:   %database_name%
-        user:     %database_user%
-        password: %database_password%
+        driver:   %ey.db.driver%
+        host:     %ey.db.host%
+        port:     %ey.db.port%
+        dbname:   %ey.db.dbname%
+        user:     %ey.db.user%
+        password: %ey.db.password%
         charset:  UTF8
-        # if using pdo_sqlite as your database driver, add the path in parameters.yml
-        # e.g. database_path: %kernel.root_dir%/data/data.db3
-        # path:     %database_path%
 
     orm:
         auto_generate_proxy_classes: %kernel.debug%
@@ -86,26 +83,18 @@ swiftmailer:
 fos_user:
     db_driver: orm
     firewall_name: main
-    user_class: YOF\UserBundle\Entity\User
+    user_class: FoodFlow\UserBundle\Entity\User
 
 hwi_oauth:
-    # name of the firewall in which this bundle is active, this setting MUST be set
     firewall_name: main
-    
     fosub:
         username_iterations: 30
-
-        # mapping between resource owners (see below) and properties
         properties:
             twitter: twitter_id
             facebook: facebook_id
             foursquare: foursquare_id
-            
     connect:
-      account_connector: yof_user_provider
-
-    # here you will add one (or more) configurations for resource owners
-    # and other settings you want to adjust in this bundle, just checkout the list below!
+      account_connector: ff_user_provider
     resource_owners:
         twitter:
             type:                twitter
