@@ -7,28 +7,28 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use FoodFlow\EntityBundle\Entity\Ingredient;
-use FoodFlow\EntityBundle\Form\IngredientType;
+use FoodFlow\EntityBundle\Entity\Challenge;
+use FoodFlow\EntityBundle\Form\ChallengeType;
 
 /**
- * Ingredient controller.
+ * Challenge controller.
  *
- * @Route("/ingredient")
+ * @Route("/challenge")
  */
-class IngredientController extends Controller
+class ChallengeController extends Controller
 {
     /**
-     * Lists all Ingredient entities.
+     * Lists all Challenge entities.
      *
-     * @Route("", name="ingredient")
+     * @Route("", name="challenge")
      * @Method("GET")
-     * @Template("FFWebBundle:Ingredient:index.html.twig")
+     * @Template()
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('FFEntityBundle:Ingredient')->findAll();
+        $entities = $em->getRepository('FFEntityBundle:Challenge')->findAll();
 
         return array(
             'entities' => $entities,
@@ -36,16 +36,16 @@ class IngredientController extends Controller
     }
 
     /**
-     * Creates a new Ingredient entity.
+     * Creates a new Challenge entity.
      *
-     * @Route("/", name="ingredient_create")
+     * @Route("/", name="challenge_create")
      * @Method("POST")
-     * @Template("FFWebBundle:Ingredient:new.html.twig")
+     * @Template("FFEntityBundle:Challenge:new.html.twig")
      */
     public function createAction(Request $request)
     {
-        $entity  = new Ingredient();
-        $form = $this->createForm(new IngredientType(), $entity);
+        $entity  = new Challenge();
+        $form = $this->createForm(new ChallengeType(), $entity);
         $form->bind($request);
 
         if ($form->isValid()) {
@@ -53,7 +53,7 @@ class IngredientController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('challenge_show', array('id' => $entity->getId())));
         }
 
         return array(
@@ -63,16 +63,16 @@ class IngredientController extends Controller
     }
 
     /**
-     * Displays a form to create a new Ingredient entity.
+     * Displays a form to create a new Challenge entity.
      *
-     * @Route("/new", name="ingredient_new")
+     * @Route("/new", name="challenge_new")
      * @Method("GET")
-     * @Template("FFEntityBundle:Ingredient:new.html.twig")
+     * @Template()
      */
     public function newAction()
     {
-        $entity = new Ingredient();
-        $form   = $this->createForm(new IngredientType(), $entity);
+        $entity = new Challenge();
+        $form   = $this->createForm(new ChallengeType(), $entity);
 
         return array(
             'entity' => $entity,
@@ -81,20 +81,20 @@ class IngredientController extends Controller
     }
 
     /**
-     * Finds and displays a Ingredient entity.
+     * Finds and displays a Challenge entity.
      *
-     * @Route("/{id}", name="ingredient_show")
+     * @Route("/{id}", name="challenge_show")
      * @Method("GET")
-     * @Template("FFWebBundle:Ingredient:show.html.twig")
+     * @Template()
      */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('FFEntityBundle:Ingredient')->find($id);
+        $entity = $em->getRepository('FFEntityBundle:Challenge')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Ingredient entity.');
+            throw $this->createNotFoundException('Unable to find Challenge entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -106,23 +106,23 @@ class IngredientController extends Controller
     }
 
     /**
-     * Displays a form to edit an existing Ingredient entity.
+     * Displays a form to edit an existing Challenge entity.
      *
-     * @Route("/{id}/edit", name="ingredient_edit")
+     * @Route("/{id}/edit", name="challenge_edit")
      * @Method("GET")
-     * @Template("FFEntityBundle:Ingredient:edit.html.twig")
+     * @Template()
      */
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('FFEntityBundle:Ingredient')->find($id);
+        $entity = $em->getRepository('FFEntityBundle:Challenge')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Ingredient entity.');
+            throw $this->createNotFoundException('Unable to find Challenge entity.');
         }
 
-        $editForm = $this->createForm(new IngredientType(), $entity);
+        $editForm = $this->createForm(new ChallengeType(), $entity);
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
@@ -133,31 +133,31 @@ class IngredientController extends Controller
     }
 
     /**
-     * Edits an existing Ingredient entity.
+     * Edits an existing Challenge entity.
      *
-     * @Route("/{id}", name="ingredient_update")
+     * @Route("/{id}", name="challenge_update")
      * @Method("PUT")
-     * @Template("FFWebBundle:Ingredient:edit.html.twig")
+     * @Template("FFEntityBundle:Challenge:edit.html.twig")
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('FFEntityBundle:Ingredient')->find($id);
+        $entity = $em->getRepository('FFEntityBundle:Challenge')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Ingredient entity.');
+            throw $this->createNotFoundException('Unable to find Challenge entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createForm(new IngredientType(), $entity);
+        $editForm = $this->createForm(new ChallengeType(), $entity);
         $editForm->bind($request);
 
         if ($editForm->isValid()) {
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('challenge_edit', array('id' => $id)));
         }
 
         return array(
@@ -168,9 +168,9 @@ class IngredientController extends Controller
     }
 
     /**
-     * Deletes a Ingredient entity.
+     * Deletes a Challenge entity.
      *
-     * @Route("/{id}", name="ingredient_delete")
+     * @Route("/{id}", name="challenge_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
@@ -180,21 +180,21 @@ class IngredientController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('FFEntityBundle:Ingredient')->find($id);
+            $entity = $em->getRepository('FFEntityBundle:Challenge')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Ingredient entity.');
+                throw $this->createNotFoundException('Unable to find Challenge entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl(''));
+        return $this->redirect($this->generateUrl('challenge'));
     }
 
     /**
-     * Creates a form to delete a Ingredient entity by id.
+     * Creates a form to delete a Challenge entity by id.
      *
      * @param mixed $id The entity id
      *

@@ -49,4 +49,9 @@ ff_maps:
 ff_ingredient:
     resource: "@FFEntityBundle/Controller/IngredientController.php"
     type:     annotation
-    prefix:   /ingredient
+    prefix:   /
+
+ff_challenge:
+    resource: "@FFEntityBundle/Controller/ChallengeController.php"
+    type:     annotation
+    prefix:   /
