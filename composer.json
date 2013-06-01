@@ -17,7 +17,12 @@
         "sensio/framework-extra-bundle": "2.2.*",
         "sensio/generator-bundle": "2.2.*",
         "jms/security-extra-bundle": "1.4.*",
-        "jms/di-extra-bundle": "1.3.*"
+        "jms/di-extra-bundle": "1.3.*",
+        "hwi/oauth-bundle": "~0.2@stable",
+        "friendsofsymfony/user-bundle": "~2.0@dev",
+        "braincrafted/bootstrap-bundle": "dev-master",
+        "knplabs/knp-menu": "2.0.*@dev",
+        "knplabs/knp-menu-bundle":"dev-master"
     },
     "scripts": {
         "post-install-cmd": [
