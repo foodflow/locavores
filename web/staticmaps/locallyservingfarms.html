@@ -18,8 +18,8 @@
 var map, layer1, layer2;
 function initialize() {
   var mapOptions = {
-    zoom: 12,
-    center: new google.maps.LatLng(38.6,-121.55),
+    zoom: 10,
+    center: new google.maps.LatLng(38.6,-121.5),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 
@@ -31,9 +31,10 @@ function initialize() {
       select: '\'FullAddress\'',
       from: '1jn3E_wiN507fAjDT1Bwe0HWml78fvTihMoHnDmU'
     },	
-	styles: [{
-	  markerOptions:{ iconName: "small_green"}
-	  ,}]
+	options: {
+        styleId: 7,
+        templateId: 9
+      }
   });
   layer1.setMap(map)  
 }
