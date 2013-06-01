@@ -96,7 +96,7 @@ font-weight: 100;
 
 }
 
-.container-fluid{
+.container-fluid, body{
   background-color: #fceccd;
 }
 
