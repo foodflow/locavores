@@ -6,4 +6,5 @@
 /vendor/
 /bin/
 /composer.phar
+/composer.locl
 /nbproject/private
