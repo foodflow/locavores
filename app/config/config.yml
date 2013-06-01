@@ -4,8 +4,8 @@ imports:
 
 framework:
     #esi:             ~
-    #translator:      { fallback: %locale% }
-    secret:          %secret%
+    translator:      { fallback: %locale% }
+    secret:          %ey.secret%
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
         strict_requirements: %kernel.debug%
@@ -24,6 +24,13 @@ framework:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
+    globals:
+      project: %project%
+    
+# BC Boostrap Configuration
+bc_bootstrap:
+    assets_dir:  %kernel.root_dir%/../src/YOF/WebBundle/Resources/public/components/bootstrap
+    jquery_path: %kernel.root_dir%/../src/YOF/WebBundle/Resources/public/components/jquery/jquery.js
 
 # Assetic Configuration
 assetic:
@@ -32,6 +39,10 @@ assetic:
     bundles:        [ ]
     #java: /usr/bin/java
     filters:
+        less:
+            node:       /usr/local/bin/node
+            node_paths: [/usr/local/lib/node_modules]
+            apply_to:   "\.less$"
         cssrewrite: ~
         #closure:
         #    jar: %kernel.root_dir%/Resources/java/compiler.jar
@@ -56,6 +67,14 @@ doctrine:
         auto_generate_proxy_classes: %kernel.debug%
         auto_mapping: true
 
+# Doctrine Extensions Configuration
+stof_doctrine_extensions:
+    default_locale: en_US
+    orm:
+        default:
+            sluggable: true
+            timestampable: true
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: %mailer_transport%
@@ -63,3 +82,41 @@ swiftmailer:
     username:  %mailer_user%
     password:  %mailer_password%
     spool:     { type: memory }
+    
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: YOF\UserBundle\Entity\User
+
+hwi_oauth:
+    # name of the firewall in which this bundle is active, this setting MUST be set
+    firewall_name: main
+    
+    fosub:
+        username_iterations: 30
+
+        # mapping between resource owners (see below) and properties
+        properties:
+            twitter: twitter_id
+            facebook: facebook_id
+            foursquare: foursquare_id
+            
+    connect:
+      account_connector: yof_user_provider
+
+    # here you will add one (or more) configurations for resource owners
+    # and other settings you want to adjust in this bundle, just checkout the list below!
+    resource_owners:
+        twitter:
+            type:                twitter
+            client_id:           %oauth.twitter.client.id%
+            client_secret:       %oauth.twitter.client.secret%
+        facebook:
+            type:                 facebook
+            client_id:            %oauth.facebook.client.id%
+            client_secret:        %oauth.facebook.client.secret%
+            scope:                "email"
+        foursquare:
+            type:                 foursquare
+            client_id:            %oauth.foursquare.client.id%
+            client_secret:        %oauth.foursquare.client.secret%
