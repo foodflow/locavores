@@ -14,4 +14,4 @@ run "curl -s https://getcomposer.org/installer | php -d allow_url_fopen=on"
 run "php -d allow_url_fopen=on composer.phar install"
 
 # update schema
-run "php #{release_path}/app/console doctrine:schema:update --force"
+run "php -d allow_url_fopen=on #{release_path}/app/console doctrine:schema:update --force"
