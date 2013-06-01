@@ -1,35 +1,294 @@
- body {
-        padding-top: 20px;
+/* CSS Document */
+
+@import url(http://fonts.googleapis.com/css?family=Patrick+Hand+SC);
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans);
+@import url(http://fonts.googleapis.com/css?family=Boogaloo);
+
+    body {
+        padding-top: 60px;
         padding-bottom: 40px;
       }
+    
+    p{font-family: 'Noto Sans', sans-serif;}
+    
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+    
 
-      /* Custom container */
-      .container-narrow {
-        margin: 0 auto;
-        max-width: 700px;
-      }
-      .container-narrow > hr {
-        margin: 30px 0;
-      }
+  /*navigation*/
+  .navbar-inner{
+    background-image:none;
+    background-color:white;
+    border-bottom: 2px solid #f1592a;
+  }
+  .navbar-inverse .navbar-inner{
+    background-image:none;
+    background-color:white;
+    border-bottom: 2px solid #f1592a;
+  }
 
-      /* Main marketing message and sign up button */
-      .jumbotron {
-        margin: 60px 0;
-        text-align: center;
-      }
-      .jumbotron h1 {
-        font-size: 72px;
-        line-height: 1;
-      }
-      .jumbotron .btn {
-        font-size: 21px;
-        padding: 14px 24px;
-      }
+  .navbar-inverse .nav > li > a, .navbar-inverse .navbar-text{
+    text-shadow:none;
+    color: #f1592a;
+  }
 
-      /* Supporting marketing content */
-      .marketing {
-        margin: 60px 0;
-      }
-      .marketing p + h4 {
-        margin-top: 28px;
+  .navbar-inverse .navbar-text a{
+    text-shadow:none;
+    color:#5ab54a;
+  }
+  
+  
+  a.brand{
+    color: white; 
+    font-family: 'Boogaloo', cursive;
+    font-size:22px;
+    }
+    
+    .navbar .brand {
+      font-size:34px;
+      color:#f1592a;
+    }
+    
+  .navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active >        a:focus {
+  color:#f1592a;
+  background-color:transparent; 
+  font-family: 'Noto Sans', sans-serif;
+  margin-top: 15px;
+  }
+  
+  .navbar-inverse .nav > li > a{
+    font-family: 'Noto Sans', sans-serif;
+    margin-top: 15px;
+  }
+  
+  img.brand{
+    height: 50px;
+  }
+  
+/************START ingredient Page**************/ 
+    
+/*Ingredient Header*/
+
+h5.main-challenge-header{
+  text-align:center;
+  font-size:30px;
+  font-family: 'Noto Sans', sans-serif;
+  text-transform:uppercase;
+  font-weight:300;
+  margin:40px 0px;
+}
+
+#challenge-button{
+  padding-top: 45px;
+}
+
+#ingredient-header{
+  background-color:#33454f;
+  padding: 20px 0px;
+  border-bottom: 2px solid #f1592a;
+}
+
+#ingredient-header h1{
+font-family: 'Boogaloo', cursive;
+color:white;
+font-weight: 100;
+
+}
+
+.container-fluid{
+  background-color: #fceccd;
+}
+
+#ingredient-header .container-fluid{background-color:#33454f;}
+
+blockquote p{
+  color: white;
+}
+/*call to action button*/
+.btn-primary {
+background-image:none;
+border:none;
+background-color:#57752d; 
+border-radius:0px;
+}
+
+.btn-primary:hover{
+  background-image:none;
+border:none;
+background-color:#57752d;     
+border-radius:0px;
+opacity:.7;
+}
+
+/*chef/farm*/
+#chef-info h3{
+  font-family: 'Boogaloo', cursive;
+  color:#57752d;
+  
+}
+
+#chef-info h5{
+  color:#f1592a;
+}
+
+#chef-info p{
+  font-style:italic;
+}
+/*info boxes*/
+#info .container-fluid{
+  padding: 40px 0px 20px 0px;
+}
+
+#info-box{
+  background-color:#33454f;
+padding: 10px;
+min-height: 200px;
+color: white;
+border:4px solid #f1592a;
+}
+
+#info-box h5{
+  text-align:center;
+    font-family: 'Boogaloo', cursive;
+    font-size:18px;
+    color:white;
+    font-weight: 100;
+    font-weight: 100;
+letter-spacing: 1px;
+
+}
+  
+/*recipes*/
+h4.recipeheader{
+  margin-top:40px;
+  font-family: 'Boogaloo', cursive;
+  font-size:30px;
+  text-align:center;
+  padding-bottom:10px;
+  padding-top: 10px;
+  border-bottom: 2px solid #f1592a;
+  color:#57752d;
+
+
+
+}
+
+#recipe h3{
+  font-family: 'Boogaloo', cursive;
+  font-size:20px;
+}
+
+#recipe{
+  font-family: 'Noto Sans', sans-serif;
+}
+/***************END Ingredient Page*************/
+
+/*Challenge Header*/
+
+h5.main-challenge-header{
+  color:#57752d;
+}
+
+#ingredient-header-challenge{
+background-color:#33454f;
+  padding: 20px 10px;
+  border-bottom: 2px solid #f1592a;
+  border-top: 2px solid #f1592a;
+}
+
+#ingredient-header-challenge h1{
+font-family: 'Boogaloo', cursive;
+color:white;
+
+}
+
+/*participants*/
+.media{
+  float:left;
+  margin-top:0px;
+  padding-right:6px;
+}
+
+.media-body h4{
+  font-family: 'Noto Sans', sans-serif;
+  font-size:12px;
+  text-align:center;
+  font-weight:lighter;
+  
+}
+
+h5.challenge-list{
+  font-family: 'Boogaloo', cursive;
+  font-size:24px;
+  margin-top: 40px;
+text-align: center;
+color:#57752d;
+}
+
+#challenge-description{
+  margin-top:20px;
+  color: white;
+}
+
+#challenge-description .row-fluid{
+  background-color:#33454f;
+  padding: 10px 0px 10px 10px;
+
+}
+
+h5.challenge-header{
+  font-family: 'Boogaloo', cursive;
+  color:white;
+  font-size: 28px;
+}
+
+blockquote {
+  margin: 1em 20px;
+  padding-left: 50px;
+  background: transparent url(assets/quote.png) no-repeat;
+  border-left:none;
+  background-position: 0px -10px;
+   }
+
+   h5.participants{
+    margin-top: 45px;
+    font-family: 'Boogaloo', cursive;
+    color:#57752d;
+    font-size: 24px;
+   }
+
+/*******START individual challenge page**/
+h5.challenge-info-header{
+  font-family: 'Boogaloo', cursive;
+  font-size:24px;
+  margin-top: 70px;
+  color:#57752d;
+  
+}
+
+h5.challenge-points{
+  color: white;
+}
+
+blockquote li{
+  color: white;
+}
+#challenge-info blockquote{
+  background-color:#33454f;
+  padding: 10px 0px 10px 50px;
+  background-position: 0px 0px;
+}
+
+#user-photo img{
+  width: 16%;
+}
+
+      @media (max-width: 980px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+          float: none;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
       }
