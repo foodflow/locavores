@@ -1,0 +1,48 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Locally Serving Farms</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body, #map-canvas {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDzefoJEoI7UkzPo28cTnh2BodOnJZ8Flo&sensor=false"></script>
+    <script>
+var map, layer1, layer2;
+function initialize() {
+  var mapOptions = {
+    zoom: 12,
+    center: new google.maps.LatLng(38.6,-121.55),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+
+  map = new google.maps.Map(document.getElementById('map-canvas'),
+    mapOptions);
+// Locally Serving Farms
+  layer1 = new google.maps.FusionTablesLayer({
+    query: {
+      select: '\'FullAddress\'',
+      from: '1jn3E_wiN507fAjDT1Bwe0HWml78fvTihMoHnDmU'
+    },	
+	styles: [{
+	  markerOptions:{ iconName: "small_green"}
+	  ,}]
+  });
+  layer1.setMap(map)  
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+  </body>
+</html>
+
