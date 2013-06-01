@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple Map</title>
+    <title>Restaurants</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <style>
@@ -18,8 +18,8 @@
 var map, layer1;
 function initialize() {
   var mapOptions = {
-    zoom: 12,
-    center: new google.maps.LatLng(38.6,-121.55),
+    zoom: 10,
+    center: new google.maps.LatLng(38.6,-121.5),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 
@@ -32,9 +32,10 @@ function initialize() {
       select: '\'Name\'',
       from: '1Ly_2sX_U4VbeL8xn1T820ijMMRRnM51dw64egk4'
     },
-	styles: [{
-	  markerOptions:{ iconName: "measle_brown"}
-	  ,}]
+	options: {
+        styleId: 2,
+        templateId: 2
+      }
 	
   });
   layer1.setMap(map)
