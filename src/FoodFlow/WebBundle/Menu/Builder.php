@@ -11,7 +11,6 @@ class Builder extends ContainerAware
     {
         $menu = $factory->createItem('root');
 
-        $menu->addChild('Home', array('route' => 'ff_web_home'));
         $menu->addChild('Challenge', array('route' => 'challenge'));
         $menu->addChild('Map', array('route' => 'ff_maps_home'));
         $menu->addChild('Purpose', array('route' => 'ff_web_purpose'));
