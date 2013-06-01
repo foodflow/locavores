@@ -4,14 +4,30 @@
 
 {% block head %}
 <script type="text/javascript">
-  
+function setIframeSource() {
+  var theSelect = document.getElementById('location');
+  var theIframe = document.getElementById('myIframe');
+  var theUrl;
+ 
+  theUrl = theSelect.options[theSelect.selectedIndex].value;
+  theIframe.src = theUrl;
+}
 </script>
 {% endblock %}
 
 {% block body %}
 
 <h1>Map</h1>
-
-<iframe src="/staticmaps/farmmarkets.html" width="100%" height="400px"></iframe>
+<form id="form1" method="post">
+     <label> Select A Location: <select id="location" onchange="setIframeSource()">
+          <option value="dummy.html">Select a location ...</option>
+          <option value="/staticmaps/farmmarkets.html">Farmer's Markets</option>
+          <option value="/staticmaps/restaurants.html">Restaurants Using Locally Source Food</option>
+          <option value="/staticmaps/agtourism.html">Agri. Tourism</option>
+          <option value="/staticmaps/locallyservingfarms.html">Locally Serving Farms</option>
+     </select></label>
+</form>
+ 
+<iframe id="myIframe" src="dummy.html" frameborder="0" marginwidth="0" marginheight="0" width="100%" height="400px"></iframe>
 
 {% endblock %}
