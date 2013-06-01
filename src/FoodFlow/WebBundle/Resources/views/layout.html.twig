@@ -28,7 +28,8 @@
 
           <img class="brand" src="/assets/locavores-logo.png">
           <div class="nav-collapse collapse">
-            {{ knp_menu_render('FFWebBundle:Builder:mainMenu', {'nav_type': 'pills', 'pull': 'right'}) }}
+            {{ knp_menu_render('FFWebBundle:Builder:mainMenu', {'pull': 'left'}) }}
+            {{ knp_menu_render('FFWebBundle:Builder:authMenu', {'pull': 'right'}) }}
           </div><!--/.nav-collapse -->
         </div>
       </div>

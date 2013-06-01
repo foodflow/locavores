@@ -15,6 +15,13 @@ class Builder extends ContainerAware
         $menu->addChild('Map', array('route' => 'ff_maps_home'));
         $menu->addChild('Purpose', array('route' => 'ff_web_purpose'));
 
+        return $menu;
+    }
+
+    public function authMenu(FactoryInterface $factory, array $options)
+    {
+        $menu = $factory->createItem('root');
+
         $context = $this->container->get('security.context');
 
         if ($context->isGranted('ROLE_USER')) {
