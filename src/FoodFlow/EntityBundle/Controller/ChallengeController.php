@@ -22,7 +22,7 @@ class ChallengeController extends Controller
      *
      * @Route("", name="challenge")
      * @Method("GET")
-     * @Template()
+     * @Template("FFWebBundle:Challenge:index.html.twig")
      */
     public function indexAction()
     {

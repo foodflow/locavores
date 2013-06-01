@@ -8,7 +8,7 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('FFWebBundle:Default:index.html.twig');
+        return $this->render('FFWebBundle:Challenge:index.html.twig');
     }
 
     public function aboutAction()

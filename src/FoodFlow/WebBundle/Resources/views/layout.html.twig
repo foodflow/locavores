@@ -28,13 +28,7 @@
 
           <img class="brand" src="/assets/locavores-logo.png">
           <div class="nav-collapse collapse">
-            <p class="navbar-text pull-right">
-              Logged in as <a href="#" class="navbar-link">Username</a>
-            </p>
-            <ul class="nav">
-              <li class="active"><a href="/ingredient/2">Ingredient</a></li>
-              <li><a href="/challenge">Challenge</a></li>
-            </ul>
+            {{ knp_menu_render('FFWebBundle:Builder:mainMenu', {'nav_type': 'pills', 'pull': 'right'}) }}
           </div><!--/.nav-collapse -->
         </div>
       </div>
