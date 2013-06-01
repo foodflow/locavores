@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple Map</title>
+    <title>Farmer's Markets</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <style>
@@ -15,11 +15,11 @@
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDzefoJEoI7UkzPo28cTnh2BodOnJZ8Flo&sensor=false"></script>
     <script>
-var map, layer1;
+var map, layer;
 function initialize() {
   var mapOptions = {
-    zoom: 12,
-    center: new google.maps.LatLng(38.6,-121.55),
+    zoom: 10,
+    center: new google.maps.LatLng(38.6,-121.5),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 
@@ -27,15 +27,22 @@ function initialize() {
     mapOptions);
 
 //Farmer's Markets
-  layer1 = new google.maps.FusionTablesLayer({
-    query: {
-      select: '\'Name\'',
-      from: '1Th_4h80vdJKUAmgtkjch5kHtFx1tRThrofguUcw'
-    },
-	styles: [{
+  layer = new google.maps.FusionTablesLayer({
+      map: map,
+      heatmap: { enabled: false },
+      query: {
+        select: "col8",
+        from: "1Th_4h80vdJKUAmgtkjch5kHtFx1tRThrofguUcw",
+        where: ""
+      },
+	  options: {
+        styleId: 2,
+        templateId: 2
+      }
+/*	styles: [{
 	  markerOptions:{ iconName: "small_blue"}
 	  ,}]
-	
+*/	
   });
   layer1.setMap(map)
   
