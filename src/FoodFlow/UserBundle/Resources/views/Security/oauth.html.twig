@@ -1,0 +1,6 @@
+<h4>Social Login</h4>
+<ul>
+{% for provider in hwi_oauth_resource_owners() %}
+    <li><a class="{{ 'login-' ~ provider }}" href="{{ hwi_oauth_login_url(provider) }}">Login with {{ provider|capitalize }}</a></li>
+{% endfor %}
+</ul>

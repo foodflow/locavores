@@ -1,0 +1,15 @@
+ff_web_home:
+    path:  /
+    defaults: { _controller: FFWebBundle:Default:index }
+    
+ff_web_about:
+    path:  /about
+    defaults: { _controller: FFWebBundle:Default:about }
+    
+ff_web_contact:
+    path:  /contact
+    defaults: { _controller: FFWebBundle:Default:contact }
+
+ff_web_purpose:
+    path:  /purpose
+    defaults: { _controller: FFWebBundle:Default:purpose }

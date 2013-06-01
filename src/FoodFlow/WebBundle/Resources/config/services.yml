@@ -1,0 +1,7 @@
+parameters:
+#    ff_web.example.class: FoodFlow\WebBundle\Example
+
+services:
+#    ff_web.example:
+#        class: %ff_web.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,34 @@
+FoodFlow\UserBundle\Entity\User:
+    type:  entity
+    table: users
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+      twitter_id:
+        type: string
+        length: 255
+        nullable: true
+      twitter_access_token:
+        type: string
+        length: 1000
+        nullable: true
+      facebook_id:
+        type: string
+        length: 255
+        nullable: true
+      facebook_access_token:
+        type: string
+        length: 1000
+        nullable: true
+      foursquare_id:
+        type: string
+        length: 255
+        nullable: true
+      foursquare_access_token:
+        type: string
+        length: 1000
+        nullable: true
+        

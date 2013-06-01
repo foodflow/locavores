@@ -1,0 +1,7 @@
+parameters:
+    ff_user_provider.class: FoodFlow\UserBundle\Security\Core\User\FOSUBUserProvider
+ 
+services:
+    ff_user_provider:
+        class: "%ff_user_provider.class%"
+        arguments: [@fos_user.user_manager,{twitter: twitter_id, facebook: facebook_id}]

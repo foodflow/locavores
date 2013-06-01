@@ -1,0 +1,28 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<h3> User Details </h3>
+
+<div class="fos_user_user_show">
+    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+</div>
+
+<h3> Social Settings </h3>
+
+<ul>
+{% for provider in hwi_oauth_resource_owners() %}
+    <li class="{{ 'oauth-' ~ provider }}">
+      {% set proper = provider|capitalize %}
+      {% set provider_get_method = 'get' ~ proper ~ 'Id' %} 
+      {% set provider_attrib = attribute(user, provider_get_method) %}
+      {{ proper }}:
+      {% if provider_attrib is not null %}
+        Connected
+      {% else %}
+        <a href="{{ hwi_oauth_authorization_url(provider) }}">
+          Link Account to {{ provider|capitalize }}
+        </a>
+      {% endif %}
+    </li>
+{% endfor %}
+</ul>
