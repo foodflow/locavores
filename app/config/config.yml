@@ -28,9 +28,9 @@ twig:
       project: %project%
     
 # BC Boostrap Configuration
-#bc_bootstrap:
-#    assets_dir:  %kernel.root_dir%/../src/FoodFlow/WebBundle/Resources/public/components/bootstrap
-#    jquery_path: %kernel.root_dir%/../src/FoodFlow/WebBundle/Resources/public/components/jquery/jquery.js
+bc_bootstrap:
+    assets_dir:  %kernel.root_dir%/../vendor/twitter/bootstrap
+    jquery_path: %kernel.root_dir%/../vendor/jquery/jquery/jquery-1.9.1.js
 
 # Assetic Configuration
 assetic:
