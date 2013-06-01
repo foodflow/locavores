@@ -38,6 +38,10 @@ facebook_login:
 foursquare_login:
     pattern: /login/with-foursquare
 
+ff_user_profile:
+    resource: "@FFUserBundle/Resources/config/routing.yml"
+    prefix:   /
+    
 ff_web:
     resource: "@FFWebBundle/Resources/config/routing.yml"
     prefix:   /

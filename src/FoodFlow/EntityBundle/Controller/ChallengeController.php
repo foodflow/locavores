@@ -85,7 +85,7 @@ class ChallengeController extends Controller
      *
      * @Route("/{id}", name="challenge_show")
      * @Method("GET")
-     * @Template()
+     * @Template("FFWebBundle:Challenge:show.html.twig")
      */
     public function showAction($id)
     {
