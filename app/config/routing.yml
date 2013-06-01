@@ -45,3 +45,8 @@ ff_web:
 ff_maps:
     resource: "@FFMapsBundle/Resources/config/routing.yml"
     prefix:   /
+
+ff_ingredient:
+    resource: "@FFEntityBundle/Controller/IngredientController.php"
+    type:     annotation
+    prefix:   /ingredient
