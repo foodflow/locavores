@@ -1,0 +1,3 @@
+ff_maps_home:
+    path: /map
+    defaults: { _controller: FFMapsBundle:Default:index }

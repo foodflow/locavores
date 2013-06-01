@@ -39,7 +39,9 @@
         "knplabs/knp-menu": "2.0.*@dev",
         "knplabs/knp-menu-bundle":"dev-master",
         "twitter/bootstrap": "v2.3.2",
-        "jquery/jquery": "1.9.*"
+        "jquery/jquery": "1.9.*",
+        "egeloen/google-map-bundle": "*",
+        "willdurand/geocoder": "*"
     },
     "scripts": {
         "post-install-cmd": [

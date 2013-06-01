@@ -1,0 +1,16 @@
+{% extends "FFWebBundle::layout.html.twig" %}
+
+{% block title %} Map {% endblock %}
+
+{% block head %}
+  {{ google_map_css(map) }}
+  {{ google_map_js(map) }}
+{% endblock %}
+
+{% block body %}
+
+<h1>Map</h1>
+
+{{ google_map_container(map) }}
+
+{% endblock %}

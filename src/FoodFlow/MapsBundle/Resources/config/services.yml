@@ -1,0 +1,7 @@
+parameters:
+#    ff_maps.example.class: FoodFlow\MapsBundle\Example
+
+services:
+#    ff_maps.example:
+#        class: %ff_maps.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

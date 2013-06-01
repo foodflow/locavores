@@ -24,9 +24,11 @@ class AppKernel extends Kernel
             new Bc\Bundle\BootstrapBundle\BcBootstrapBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new Ivory\GoogleMapBundle\IvoryGoogleMapBundle(),
             new FoodFlow\UserBundle\FFUserBundle(),
             new FoodFlow\EntityBundle\FFEntityBundle(),
             new FoodFlow\WebBundle\FFWebBundle(),
+            new FoodFlow\MapsBundle\FFMapsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

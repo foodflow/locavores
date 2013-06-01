@@ -41,3 +41,7 @@ foursquare_login:
 ff_web:
     resource: "@FFWebBundle/Resources/config/routing.yml"
     prefix:   /
+    
+ff_maps:
+    resource: "@FFMapsBundle/Resources/config/routing.yml"
+    prefix:   /
