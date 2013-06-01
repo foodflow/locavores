@@ -5,6 +5,7 @@
 @import url(http://fonts.googleapis.com/css?family=Boogaloo);
 
     body {
+        background-color: #fceccd;
         padding-top: 60px;
         padding-bottom: 40px;
       }
@@ -96,7 +97,7 @@ font-weight: 100;
 
 }
 
-.container-fluid, body{
+.container-fluid {
   background-color: #fceccd;
 }
 
