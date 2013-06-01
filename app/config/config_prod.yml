@@ -15,6 +15,16 @@ assetic:
     filters:
         less:
             node:       /usr/bin/node
+            
+doctrine:
+    dbal:
+        driver:   %ey.db.driver%
+        host:     %ey.db.host%
+        port:     %ey.db.port%
+        dbname:   %ey.db.dbname%
+        user:     %ey.db.user%
+        password: %ey.db.password%
+        charset:  UTF8
 
 #doctrine:
 #    orm:
