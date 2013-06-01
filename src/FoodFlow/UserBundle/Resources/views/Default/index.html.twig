@@ -1,6 +1,11 @@
-<div class="container-fluid">
+{% extends "FFWebBundle::layout.html.twig" %}
+
+{% block title %} {{dump(user)}} {% endblock title %}
+
+{% block body %}
+<div class="container-fluid" style="padding-top: 30px">
  <div class="span3">
-<img src="assets/radar.jpg" class="img-circle">
+<img src="/assets/radar.jpg" class="img-circle">
 
  </div>
  <div class="span9">
@@ -19,7 +24,7 @@
   <div class="row-fluid">
  <div class="span2">
  <div class="media">
-    <img class="media-object" src="assets/waffles copy.jpg">
+    <img class="media-object" src="/assets/waffles copy.jpg">
   </a>
   <div class="media-body">
     <h4 class="media-heading">Cherry Restaurant Challenge</h4>
@@ -30,7 +35,7 @@
   
    <div class="span2">
  <div class="media">
-    <img class="media-object" src="assets/waffles copy.jpg">
+    <img class="media-object" src="/assets/waffles copy.jpg">
   </a>
   <div class="media-body">
     <h4 class="media-heading">Cherry Restaurant Challenge</h4>
@@ -41,7 +46,7 @@
   
    <div class="span2">
  <div class="media">
-    <img class="media-object" src="assets/waffles copy.jpg">
+    <img class="media-object" src="/assets/waffles copy.jpg">
   </a>
   <div class="media-body">
     <h4 class="media-heading">Cherry Restaurant Challenge</h4>
@@ -52,7 +57,7 @@
   
    <div class="span2">
  <div class="media">
-    <img class="media-object" src="assets/waffles copy.jpg">
+    <img class="media-object" src="/assets/waffles copy.jpg">
   </a>
   <div class="media-body">
     <h4 class="media-heading">Cherry Restaurant Challenge</h4>
@@ -62,7 +67,7 @@
   </div>
    <div class="span2">
  <div class="media">
-    <img class="media-object" src="assets/waffles copy.jpg">
+    <img class="media-object" src="/assets/waffles copy.jpg">
   </a>
   <div class="media-body">
     <h4 class="media-heading">Cherry Restaurant Challenge</h4>
@@ -72,7 +77,7 @@
   </div>
    <div class="span2">
  <div class="media">
-    <img class="media-object" src="assets/waffles copy.jpg">
+    <img class="media-object" src="/assets/waffles copy.jpg">
   </a>
   <div class="media-body">
     <h4 class="media-heading">Cherry Restaurant Challenge</h4>
@@ -83,4 +88,4 @@
   
   
  </div>
- 
+ {% endblock %}
