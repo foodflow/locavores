@@ -10,6 +10,11 @@ framework:
         strict_requirements: null
     #validation:
     #    cache: apc
+    
+assetic:
+    filters:
+        less:
+            node:       /usr/bin/node
 
 #doctrine:
 #    orm:
