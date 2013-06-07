@@ -43,7 +43,7 @@ security:
             security: false
  
             remember_me:
-                key: "%ey.secret%"
+                key: "%secret%"
                 lifetime: 31536000 # 365 days in seconds
                 path: /
                 domain: ~
