@@ -43,13 +43,13 @@ hwi_oauth:
         twitter:
             type:                twitter
             client_id:           wgFNLn1h0kBORgbmMxta8A
-            client_secret:       %twitter.secret%
+            client_secret:       %dev.twitter.secret%
         facebook:
             type:                 facebook
             client_id:            442769575819427
-            client_secret:        %facebook.secret%
+            client_secret:        %dev.facebook.secret%
             scope:                "email"
         foursquare:
             type:                 foursquare
             client_id:            30PIXMXXAUDENYE1THK1T21OSQ5SOTCOLXCZXYZVOM2C1PCM
-            client_secret:        %foursquare.secret%
+            client_secret:        %dev.foursquare.secret%
