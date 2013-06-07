@@ -53,12 +53,12 @@ assetic:
 # Doctrine Configuration
 doctrine:
     dbal:
-        driver:   %ey.db.driver%
-        host:     %ey.db.host%
-        port:     %ey.db.port%
-        dbname:   %ey.db.dbname%
-        user:     %ey.db.user%
-        password: %ey.db.password%
+        driver:   %db.driver%
+        host:     %db.host%
+        port:     %db.port%
+        dbname:   %db.dbname%
+        user:     %db.user%
+        password: %db.password%
         charset:  UTF8
 
     orm:
