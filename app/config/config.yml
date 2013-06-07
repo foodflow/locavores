@@ -95,7 +95,7 @@ hwi_oauth:
             facebook: facebook_id
             foursquare: foursquare_id
     connect:
-      account_connector: ff_user_provider
+      account_connector: ~
     resource_owners:
         twitter:
             type:                twitter
