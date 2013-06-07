@@ -42,14 +42,14 @@ hwi_oauth:
     resource_owners:
         twitter:
             type:                twitter
-            client_id:           %oauth.twitter.client.id%
-            client_secret:       %oauth.twitter.client.secret%
+            client_id:           wgFNLn1h0kBORgbmMxta8A
+            client_secret:       %twitter.secret%
         facebook:
             type:                 facebook
-            client_id:            %oauth.facebook.client.id%
-            client_secret:        %oauth.facebook.client.secret%
+            client_id:            442769575819427
+            client_secret:        %facebook.secret%
             scope:                "email"
         foursquare:
             type:                 foursquare
-            client_id:            %oauth.foursquare.client.id%
-            client_secret:        %oauth.foursquare.client.secret%
+            client_id:            30PIXMXXAUDENYE1THK1T21OSQ5SOTCOLXCZXYZVOM2C1PCM
+            client_secret:        %foursquare.secret%
